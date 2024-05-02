@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { DataService } from '../../services/data.service';
 import { AsyncPipe, NgIf } from '@angular/common';
+import { injectLoad } from '@analogjs/router';
+import { load } from './index.server';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-blog',
@@ -25,8 +27,9 @@ import { AsyncPipe, NgIf } from '@angular/common';
   `,
 })
 export default class BlogComponent {
-  constructor(private dataService:DataService){
-  }
-
-  content$=this.dataService.getTitle();
+  // data = toSignal(injectLoad<typeof load>(), { requireSync: true });
+  // content$=this.data();
 }
+
+
+
