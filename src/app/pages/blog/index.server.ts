@@ -1,13 +1,7 @@
-import { HttpClient, HttpHandler } from '@angular/common/http';
-// import { DataService } from '../../services/data.service';
-let http:HttpClient;
+import { getData } from '../../services/data.service';
 export const load = async () => {
-
-
-// const dataService=new DataService(http)
-  // const content$=await dataService.getTitle();
-
-return {}
-// content$;
-
+const content$=await getData();
+return content$;
 };
+
+
