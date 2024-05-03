@@ -14,14 +14,7 @@ export default defineConfig(({ mode }) => ({
   },
   // prerender property to configure routes to be rendered at build time.
   plugins: [
-    analog({
-      prerender: {
-        routes: [
-          '/',
-          '/blog',
-        ]
-      }
-    }),
+    analog({}),
   ],
   test: {
     globals: true,
